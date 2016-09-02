@@ -1,0 +1,22 @@
+ul {
+	border-style: solid;
+	border-width: 1px;
+	padding: 0px;
+	list-style-type: none;
+}
+
+li {
+	padding: 3px;
+}
+
+li:nth-child(even) {
+	background-color: #eee;
+}
+
+li:nth-child(odd) {
+	background-color: #fff;
+}
+
+li:hover {
+	background-color: #aaf
+}

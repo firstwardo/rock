@@ -1,0 +1,17 @@
+<div ng-cloak class="pane">
+	<h3> Login </h3>
+	Username/Email:
+	<input type="text" placeholder="Username" ng-model="loginModel.username">
+	</br>
+	Password:
+	<input type="password" placeholder="Password" ng-model="loginModel.password" >
+	</br>
+	<button ng-click="login()"> Login </button>
+	</br>
+	<input type="checkbox" ng-model="loginModel.rememberme">
+	Keep Me Logged In
+	</br>
+	<button onclick="logout()"> Logout
+	</br>
+	<a href="#/register"> Create New Account </a>
+</div>

@@ -1,0 +1,11 @@
+<div ng-controller="musicPlayerBarController">
+		<progress max="{{currentTrackDuration}}" class= "control" value="{{currentTrackProgress}}" ng-click="seekTrack($event)"></progress>
+		<div id="gsPlayer"></div>
+		<div id="ytPlayer" style="display: none;"></div>
+		<div id="play" class="control" ng-click="play()">PLAY</div>
+		<div id="pause" class="control" ng-click="pause()">PAUSE</div>
+		<div id="next" class="control" ng-click="skip()">SKIP</div>
+		<div id="stop" class="control" ng-click="stop()">STOP</div>
+		<div class="control" id="volume"><input type="range" min="0" max="100" step="1" ng-model="musicPlayerBarModel.volume"></input></div>
+		<span>{{playlist[0].metadata.title}}</span>
+</div>

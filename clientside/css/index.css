@@ -1,0 +1,119 @@
+html, body {
+	font-family: 'Varela Round', sans-serif;
+	/*font-family: 'Indie Flower', cursive;*/
+	font-size: 16pt;
+    margin: 0;
+    padding:0;
+    background-color: #ddd;
+}
+
+.highlighted {
+    color: #f00;
+}
+#head {
+    padding:10px;
+}
+
+#head a {
+	float: right;
+	margin-left: 5px;
+	/*background-color: #fff;*/
+	padding: 5px;
+	text-decoration: none;
+}
+
+#head img {
+	width: 100px;
+}
+
+#content {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 103px;
+    bottom: 30px;
+}
+#footer {
+	/*display: inline;*/
+    /*height: 155px;*/
+	color: black;
+	text-align: center;
+	position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ddd;
+}
+
+#search {
+	/*font-family: 'Indie Flower', cursive;*/
+	font-size: 16pt;
+	display: inline;
+	border-radius: 15px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #ddd;
+	padding: 10px;
+	outline: none;
+	margin-left: 15px;
+	margin-top: 15px;
+	width: 60%;
+}
+.pane {
+    position: absolute;
+	background-color: #fff;
+	overflow: auto;
+    height: 100%;
+    width: 100%;
+}
+
+#lpane {
+    left: 0;
+    width: 49%
+}
+
+#rpane {
+    right: 0;
+    width: 49%;
+}
+
+.control {
+	display: inline;
+	padding-right: 1em;
+}
+#volume {
+	background-color: red;
+}
+.red {
+	background-color: red;
+}
+
+.green {
+	background-color: green;
+}
+
+.blue {
+	background-color: blue;
+}
+
+.yellow {
+	background-color: yellow;
+}
+
+ul {
+	font-size: 12px;
+	list-style-type: none;
+	padding: 0px;
+}
+
+li {
+	border-bottom: 1px dotted gray;
+}
+
+span {
+	padding-left: 15px;
+}
+progress[value] {
+  width: 250px;
+  height: 20px;
+}

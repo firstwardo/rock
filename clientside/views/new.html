@@ -1,0 +1,26 @@
+<div ng-cloak class="pane">
+	<h1>Make a new Songbox</h1>
+	<input type="textbox" id="search" value="Search" onclick="search.value=''">
+	<select id="typelist">
+		<option value="track">Track</option>
+		<option value="artist">Artist</option>
+		<option value="album">Album</option>
+	</select>
+	</br>
+	<input type="button" id="combine" value="Get SC and GS combined" onclick="searchSongs(search.value,'all',typelist.value,'true')">
+	</br>
+	<input type="button" id="spotifysearch" value="Search Spotify" onclick="searchSongs(search.value,'spotify',typelist.value,'false')">
+	<input type="button" id="scsearch" value="Search Soundcloud" onclick="searchSongs(search.value,'soundcloud',typelist.value,'false')">
+	<input type="button" id="rdsearch" value="Search Rdio" onclick="searchSongs(search.value,'rdio',typelist.value,'false')">
+	<input type="button" id="itsearch" value="Search iTunes" onclick="searchSongs(search.value,'itunes',typelist.value,'false')">
+	<input type="button" id="bmsearch" value="Search Beats Music" onclick="searchSongs(search.value,'beatsmusic',typelist.value,'false')">
+	</br>
+	<input type="button" id="gmsearch" value="Search Google FUCKIN Music" onclick="searchSongs(search.value,'googlemusic',typelist.value,'false')">
+	<input type="button" id="gssearch" value="Search Grooveshark" onclick="searchSongs(search.value,'grooveshark',typelist.value,'false')">
+	<input type="button" id="ytsearch" value="Search Youtube" onclick="searchSongs(search.value,'youtube',typelist.value,'false')">
+	<input type="button" id="xbsearch" value="Search Xbox Music" onclick="searchSongs(search.value,'xbox',typelist.value,'false')">
+	<input type="button" id="xbsearch" value="Search Rhapsody" onclick="searchSongs(search.value,'rhapsody',typelist.value,'false')">
+	<ul id="songs">
+		<li></li>
+	</ul>
+</div>

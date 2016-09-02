@@ -1,0 +1,40 @@
+body,html {
+	margin: 0px;
+	height: 100%;
+}
+
+#header {
+	background-color: #f93;
+	position: fixed;
+	height: 70px;
+	width: 100%;
+}
+
+#title {
+	font-size: 36px;
+	display: inline;
+	padding: 10px;
+}
+
+#header a {
+	display: inline-block;
+	padding: 10px;
+	margin: 5px;
+}
+
+#content {
+	background-color: #aaa;
+	position: fixed;
+	top: 70px;
+	width: 100%;
+	bottom: 50px;
+	overflow: auto;
+}
+
+#footer {
+	background-color: #ffa;
+	position: fixed;
+	height: 50px;
+	width: 100%;
+	bottom: 0px;
+}

@@ -1,0 +1,31 @@
+<div ng-cloak>
+		<div id="lpane" class="pane">
+        <div ng-show="playlistArray != null">
+            <select ng-model="searchModel.loadPlaylist" ng-options="playlist._id for playlist in playlistArray" >
+                <option value="">Select Thing</option>
+            </select>
+            <button ng-click="loadPlaylist()">Load Playlist</button>
+        </div>
+			<form id="searchForm" ng-submit="search()">
+                <input type="radio" name="svc" ng-click="service = 'youtube'">Youtube<br>
+                <input type="radio" name="svc" ng-click="service = 'grooveshark'">Grooveshark<br>
+                <input type="radio" name="svc" ng-click="service = 'spotify'">Spotify<br>
+                <input type="radio" name="svc" ng-click="service = 'soundcloud'">Soundcloud<br>
+                <input type="radio" name="svc" ng-click="service = 'all'" checked>All<br>
+				<input id="search" type="textfield" placeholder="Search" ng-model="query"></input>
+            </form>
+			<ul>
+				<li ng-repeat="song in searchResults">
+					<span ng-click="addSong(song)">{{song.source}} | {{song.metadata.title}} | {{song.metadata.artist}}</span>
+                </li>
+        </div>
+		<div id="rpane" class="pane">
+            <div ng-show="musicService.playlist.length > 0">
+                <button ng-click="saveCurrentQueue()">Save Current Queue</button>
+                <input type="text" placeholder="New Playlist Name" ng-model="searchModel.newPlaylistName" />
+            </div>
+			<ul ui-sortable="sortableOptions" ng-model="musicService.playlist">
+				<li ng-repeat="song in musicService.playlist track by $index"><span>{{song.metadata.title}}</span></li>
+            </ul>
+        </div>
+</div>

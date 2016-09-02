@@ -1,0 +1,52 @@
+<div ng-cloak class="pane">
+	Add More Pootis To Your Dispenser
+	</br>
+	<button ng-click="loginToSoundcloud()" ng-hide="authedApps.soundcloud">Login to Soundcloud</button>
+	</br>
+	</br>
+	<input type="button" ng-hide="authedApps.beatsmusic" value="Login to Beats Music" ng-click="loginToBeatsMusic()">
+	</br>
+	</br>
+	<input type="button" ng-hide="authedApps.youtube" value="Login to Youtube" ng-click="loginToYoutube()">
+	</br>
+	</br>
+	<input type="button" ng-hide="authedApps.rdio" value="Login to Rdio" ng-click="loginToRdio()">
+	</br>
+	</br>
+	<input type="button" ng-hide="authedApps.rhapsody" value="Login to Rhapsody" ng-click="loginToRhapsody()">
+	</br>
+	</br>
+	<div ng-hide="authedApps.spotify">
+		Username
+		<input type="text" id="spusername" value="1219511742">
+		</br>
+		Password
+		<input type="password" id="sppassword" value="pootis">
+		</br>
+		<input type="button"  value="Login to Spotify" ng-click="loginToSpotify(spusername.value,sppassword.value)">
+		</br>
+		</br>
+	</div>
+	<div ng-hide="authedApps.grooveshark">
+		Username
+		<input type="text" id="gsusername" value="firstwardo@yahoo.com">
+		</br>
+		Password
+		<input type="password" id="gspassword" value="pootisman69">
+		</br>
+		<input type="button"  value="Login to Grooveshark" ng-click="loginToGrooveshark(gsusername.value,gspassword.value)">
+		</br>
+		</br>
+	</div>
+	<div ng-hide="authedApps.googlemusic">
+		Username
+		<input type="text" id="gmusername" value="firstwardo@gmail.com">
+		</br>
+		Password
+		<input type="password" id="gmpassword" value="rlwquglbcltexdup">
+		</br>
+		<input type="button"  value="Login to Google Music" ng-click="loginToGooglemusic(gmusername.value,gmpassword.value)">
+	</div>
+	<input type="button" id="refresh" value="Refresh Google Music Library" ng-click="refresh()">
+	<br><br><form ng-submit="saveData()"><input type="text" ng-model="sessionTest"></form>
+</div>

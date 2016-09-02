@@ -1,0 +1,28 @@
+<div ng-cloak class="pane">
+	<h1>View A Playlist</h1>
+	<input type="textbox" placeholder="Playlist Name" ng-model="importPlaylistModel.searchBox">
+	<input type="button" value="Get Songbox Playlist" ng-click="getPlaylist()">
+	</br>
+	<input type="textbox" placeholder="Spotify URI" ng-model="importPlaylistModel.spotifyURI">
+	<input type="button" value="Get Spotify Playlist" ng-click="getSpotifyPlaylist()">
+	</br>
+	<input type="button" value="Get Playlists from Spotify" ng-click="getMySpotifyPlaylists()">
+	</br>
+	<input type="button" value="Get Playlists from Google Music" ng-click="getGoogleMusicPlaylists()">
+	</br>
+	<input type="button" value="Get Playlists from Soundcloud" ng-click="getSCPlaylistList()">
+	</br>
+	<input type="button" value="Get Playlists from Beats Music" ng-click="getBeatsMusicPlaylists()">
+	</br>
+	<input type="button" value="Get Playlists from Rhapsody" ng-click="getRhapsodyPlaylists()">
+	<li ng-repeat="song in playlistItems" ng-show="playlistItems">
+        <span>{{song.source}} | {{song.metadata.title}} | {{song.metadata.artist}} | {{song.metadata.album}}</span>
+    </li>
+    <li ng-repeat="playlist in playlistArray" ng-show="playlistArray">
+        <span>
+            {{playlist.name}} 
+            <button ng-click="insertPlaylistResults(playlist)">View Playlist</button>
+            <button ng-click="savePlaylistToSongbox(playlist)">Save Playlist to Sniffbox</button>
+        </span>
+    </li>
+</div>
