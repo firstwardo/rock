@@ -3,7 +3,7 @@ Songbox
 
 Songbox is a work-in-progress multi-music-streaming-service-aggregator. We take streams from Youtube, Soundcloud, Grooveshark and Spotify, combining them into a seamless listening experience.
 
-Evan Ward, Jeremy Tennison, Marc Demory and I, Stephen Sullivan have had an absolute blast learning the technologies and genuinely trying to create something people might use and love. We want to create something people want to use, not another piece of internet noise.
+Evan Ward, Jeremy Tennison, Marc Demory and Stephen Sullivan have had an absolute blast learning the technologies and genuinely trying to create something people might use and love. We want to create something people want to use, not another piece of internet noise.
 
 Version 0.0.5
 ----
@@ -30,7 +30,7 @@ Quick Installation:
 Your basic node setup:
 
 ```sh
-git clone "https://bitbucket.org/sullstecclub/rock"
+git clone "https://github.com/firstwardo/rock"
 cd rock
 npm install
 ```
