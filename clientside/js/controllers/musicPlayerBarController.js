@@ -198,7 +198,7 @@ app.controller('musicPlayerBarController', ['$scope','$http','$interval', '$wind
 			}
 		});
     var gsLoadSong = function (songID) {
-      $http.get("/load_gs_song", { params: { songID: songID } }).success(function (data) {
+      $http.get("/api/load_gs_song", { params: { songID: songID } }).success(function (data) {
         console.log(data);
         $scope.providers['gs'].player.setVolume($scope.musicPlayerBarModel.volume);
         var urlTokens = data.url.split('/');
