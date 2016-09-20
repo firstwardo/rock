@@ -12,18 +12,18 @@ app.controller('testController', ['$scope','$location','$http', function ($scope
     });
 
     function login (username,password){
-        $.get("/login/googlemusic?u="+username+"&p="+password, function(data){
+        $.get('/api/login/googlemusic?u="+username+"&p="+password, function(data){
 
         });
     }
     function refresh(){
-        $.get("/refreshgooglemusic", function(data){
+        $.get('/api/refreshgooglemusic", function(data){
 
         });
     }
 
     function searchSongs (query,type) {
-        $.get("/search?q="+query+"&s=googlemusic&t="+type+"&c=false", function (data) {
+        $.get('/api/search?q="+query+"&s=googlemusic&t="+type+"&c=false", function (data) {
             $('#songs').empty();
             insertResults(data[0],type);
         });
