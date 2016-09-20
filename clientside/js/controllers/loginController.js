@@ -14,15 +14,15 @@ app.controller('loginController', ['$scope','$http', function ($scope, $http) {
 		var user = $scope.loginModel.username;
 		var password = $scope.loginModel.password;
 		var remember = $scope.loginModel.rememberme;
-		$http.post('/api/login',{
-			'user': user,
+		$http.post('/api/user',{
+			'username': user,
 			'password': password,
 			'remember': remember,
 		}).
 		success(function (data) {
 			if(data != "Incorrect Password" && data != "User does not exist!"){
 				console.log(data);
-				window.open(data,'_self');
+				window.open('/#/new','_self');
 			}
 			else{
 				alert(data);
