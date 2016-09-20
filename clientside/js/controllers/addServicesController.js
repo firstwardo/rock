@@ -28,12 +28,12 @@ app.controller('addServicesController', ['$scope','$http', function ($scope, $ht
 
     }
     $scope.loginToGrooveshark = function (username, password) {
-            $.post('/login/grooveshark',{username: username, password: password}, function(data){
+            $.post('/api/login/grooveshark',{username: username, password: password}, function(data){
                 alert(data);
             });
     }
     $scope.loginToGooglemusic = function (username,password){
-            $.post("/login/googlemusic",{username: username, password: password}, function(data){
+            $.post("/api/login/googlemusic",{username: username, password: password}, function(data){
                 alert(data);
             });
     }
@@ -50,7 +50,7 @@ app.controller('addServicesController', ['$scope','$http', function ($scope, $ht
 
     }
     $scope.loginToSpotify = function (username,password){
-        $http.post('/login/spotify', {username:username,password:password}).
+        $http.post('/api/login/spotify', {username:username,password:password}).
         success(function (data){
             alert(data);
         }).
@@ -70,7 +70,7 @@ app.controller('addServicesController', ['$scope','$http', function ($scope, $ht
 
     $scope.sessionTest = "Green";
     $scope.saveData = function () {
-        $http.post('/save-data', {data: $scope.sessionTest})
+        $http.post('/api/save-data', {data: $scope.sessionTest})
         .success(function () {
             alert("saved");
         });
