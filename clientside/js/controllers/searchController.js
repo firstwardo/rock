@@ -8,7 +8,7 @@ app.controller('searchController', ['$scope','$http', '$cookies', 'musicService'
 			alert("Please enter a search term!");
 			return
 		}
-		$http.get('/search?q='+$scope.query+'&s='+$scope.service+'&combine=yes').then(function (response) {
+		$http.get('/api/search?q='+$scope.query+'&s='+$scope.service+'&combine=yes').then(function (response) {
 			//$scope.clear();
 			done = true;
 			console.log(response.data);
@@ -17,7 +17,7 @@ app.controller('searchController', ['$scope','$http', '$cookies', 'musicService'
 	}
 	$scope.saveCurrentQueue = function(){
 		if($scope.isLoggedIn){
-			$http.post('/playlist/new', {tracks: musicService.playlist, name:$scope.searchModel.newPlaylistName}).
+			$http.post('/api/playlist/new', {tracks: musicService.playlist, name:$scope.searchModel.newPlaylistName}).
 	        success(function(data) {
 	            alert(data);
 	        }).
@@ -46,7 +46,7 @@ app.controller('searchController', ['$scope','$http', '$cookies', 'musicService'
     		$scope.isLoggedIn = true;
     	}
     	if($scope.isLoggedIn){
-    		$http.get('/me/playlists').
+    		$http.get('/api/me/playlists').
     		success(function (data){
     			$scope.playlistArray = data;
     		}).
