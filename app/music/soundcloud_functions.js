@@ -1,6 +1,6 @@
 request = require('request');
 
-exports.search = function (query,type) {
+exports.search = function (query,type,callback) {
 	var scresults = [];
 	switch (type) {
 		case "track":
