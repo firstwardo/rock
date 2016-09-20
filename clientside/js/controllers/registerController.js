@@ -10,7 +10,7 @@ app.controller('registerController', ['$scope','$http', function ($scope, $http)
 			alert("Please double check that you typed your password correctly.");
 			return;
 		}
-		$http.post('/register',{
+		$http.post('/api/register',{
 			'email': email,
 			'username': username,
 			'password': password,}).
