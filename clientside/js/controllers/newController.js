@@ -12,7 +12,7 @@ app.controller('newController', ['$scope','$location', function ($scope,$locatio
     });
 
     function searchSongs (query,service,type,combine) {
-        $.get("/search?q="+query+"&s="+service+"&t="+type+"&c="+combine, function (data) {
+        $.get("/api/search?q="+query+"&s="+service+"&t="+type+"&c="+combine, function (data) {
             $('#songs').empty();
             if(combine=='true'){
                 insertCombinedResults(data,type);
@@ -73,7 +73,7 @@ app.controller('newController', ['$scope','$location', function ($scope,$locatio
         addPlaylist = function addToPlaylist(index){
         console.log(index);
         playlist = window.prompt("Enter exisiting playlist","SexyGriz");
-        $.post("/playlist",{p: playlist, s: data[index]}, function (data) {
+        $.post("/api/playlist",{p: playlist, s: data[index]}, function (data) {
 
         });
 
@@ -111,7 +111,7 @@ app.controller('newController', ['$scope','$location', function ($scope,$locatio
                     }
     }
     function getGSUrl (query){
-            $.get("/search/gssongurl?q="+query, function (result) {
+            $.get("/api/search/gssongurl?q="+query, function (result) {
                 window.open(""+result+"");
             });
         }
