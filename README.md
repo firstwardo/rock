@@ -1,5 +1,8 @@
 Live Demo: http://ec2-54-201-203-201.us-west-2.compute.amazonaws.com/#/login
+
 Use default credentials "anonymous" for username and password
+
+Service APIs are 2 years old, so they might not work.
 
 Songbox
 =========
