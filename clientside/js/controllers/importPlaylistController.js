@@ -4,7 +4,7 @@ app.controller('importPlaylistController', ['$scope','$location','$http', functi
     $scope.playlistArray = [];
     
     $scope.getPlaylist = function() {
-        $http.get("/playlist?p="+$scope.importPlaylistModel.searchBox).
+        $http.get("/api/playlist?p="+$scope.importPlaylistModel.searchBox).
         success(function(data) {
             insertResults(data);
         }).
@@ -13,7 +13,7 @@ app.controller('importPlaylistController', ['$scope','$location','$http', functi
         });
     }
     $scope.getSCPlaylistList = function(){
-        $http.get('/soundcloud/playlist').
+        $http.get('/api/soundcloud/playlist').
         success(function(data) {
             console.log(data)
             insertList(data);
@@ -75,7 +75,7 @@ app.controller('importPlaylistController', ['$scope','$location','$http', functi
                     );*/
             
             if(playlistObj.source == 'spotify' || playlistObj.source == 'beatsmusic' || playlistObj.source == 'rhapsody'){
-                $http.post('/'+data[i].source+'/lookupTracks', {'playlist': playlistObj}).
+                $http.post('/api/'+data[i].source+'/lookupTracks', {'playlist': playlistObj}).
                 success(function(data) {
                     insertResults(data);
                 }).
@@ -90,7 +90,7 @@ app.controller('importPlaylistController', ['$scope','$location','$http', functi
     
     
     $scope.savePlaylistToSongbox = function(playlistObj){
-        $http.post('/playlist/new', {tracks: playlistObj.tracks,name:playlistObj.name}).
+        $http.post('/api/playlist/new', {tracks: playlistObj.tracks,name:playlistObj.name}).
         success(function(data) {
             alert(data);
         }).
@@ -100,14 +100,14 @@ app.controller('importPlaylistController', ['$scope','$location','$http', functi
     }
 
     $scope.getSpotifyPlaylist = function(){
-        $http.post('/spotify/getPlaylist', {'url':importPlaylistModel.spotifyURI}).
+        $http.post('/api/spotify/getPlaylist', {'url':importPlaylistModel.spotifyURI}).
         success(function(data) {
             insertPlaylistResults(data.tracks);
         }).
         error(function(data) {
            alert('something went wrong'); 
         });
-        /*$.post('/spotify/getPlaylist',{url:url}, function(data){
+        /*$.post('/api/spotify/getPlaylist',{url:url}, function(data){
             playlistsOnPage = [];
             playlistsOnPage.push(data);
             $('#songs').empty();
@@ -146,7 +146,7 @@ app.controller('importPlaylistController', ['$scope','$location','$http', functi
     }
 
     $scope.getMySpotifyPlaylists = function(){
-        $http.get('/spotify/getMyPlaylists').   
+        $http.get('/api/spotify/getMyPlaylists').   
         success(function(data) {
             insertList(data);
         }).
@@ -156,7 +156,7 @@ app.controller('importPlaylistController', ['$scope','$location','$http', functi
     }
 
     $scope.getGoogleMusicPlaylists = function(){
-        $http.get('/googlemusic/getMyPlaylists').   
+        $http.get('/api/googlemusic/getMyPlaylists').   
         success(function(data) {
             insertList(data);
         }).
@@ -166,7 +166,7 @@ app.controller('importPlaylistController', ['$scope','$location','$http', functi
     }
 
     $scope.getBeatsMusicPlaylists = function(){
-        $http.get('/beatsmusic/getMyPlaylists').   
+        $http.get('/api/beatsmusic/getMyPlaylists').   
         success(function(data) {
             insertList(data);
         }).
@@ -175,7 +175,7 @@ app.controller('importPlaylistController', ['$scope','$location','$http', functi
         });
     }
     $scope.getRhapsodyPlaylists = function(){
-        $http.get('/rhapsody/getMyPlaylists').   
+        $http.get('/api/rhapsody/getMyPlaylists').   
         success(function(data) {
             insertList(data);
         }).
