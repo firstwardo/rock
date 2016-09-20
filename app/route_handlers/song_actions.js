@@ -143,7 +143,7 @@ exports.search = function (req, res) {
 	exports.searchResults = [];
 	console.log("Searching...");
 	switch (req.query.s) {
-		case "soundcloud":
+		/*case "soundcloud":
 			soundcloud.search(req.query.q,req.query.t,callback);
 			exports.openReqs = 1;
 			break;
@@ -154,11 +154,11 @@ exports.search = function (req, res) {
 		case "youtube":
 			youtube.search(req.query.q,req.query.t,callback);
 			exports.openReqs = 1;
-			break;
+			break;*/
 		default:
-			openReqs = 3;
+			openReqs = 1;
 			soundcloud.search(req.query.q,req.query.t,callback);
-			spotify.search(req.query.q,req.query.t,callback);
- 		   	youtube.search(req.query.q,req.query.t,callback);
+			//spotify.search(req.query.q,req.query.t,callback);
+ 		   	//youtube.search(req.query.q,req.query.t,callback);
 	}
 }
