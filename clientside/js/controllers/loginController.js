@@ -2,7 +2,7 @@ app.controller('loginController', ['$scope','$http', function ($scope, $http) {
 	$scope.loginModel = {'username': '', 'password': '', 'rememberme': false};
 	$scope.pootis = 'here';
 	$scope.logout = function(){
-		$http.get('/logout').
+		$http.get('/api/logout').
 		success(function (data) {
 			alert(data);
 		}).
@@ -14,7 +14,7 @@ app.controller('loginController', ['$scope','$http', function ($scope, $http) {
 		var user = $scope.loginModel.username;
 		var password = $scope.loginModel.password;
 		var remember = $scope.loginModel.rememberme;
-		$http.post('/login',{
+		$http.post('/api/login',{
 			'user': user,
 			'password': password,
 			'remember': remember,
