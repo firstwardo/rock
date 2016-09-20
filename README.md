@@ -1,4 +1,4 @@
-Live Demo: http://ec2-54-201-203-201.us-west-2.compute.amazonaws.com:5000
+Live Demo: http://ec2-54-201-203-201.us-west-2.compute.amazonaws.com
 
 Songbox
 =========
