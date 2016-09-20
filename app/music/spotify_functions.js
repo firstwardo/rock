@@ -3,7 +3,7 @@ var SWA = require('spotify-web-api-node');
 var querystring = require('querystring');
 var request = require('request');
 var session = null;
-exports.search = function(query,type) {
+exports.search = function(query,type,callback) {
 	var type = type || "track";
 	var spresults = [];
 	var url = 'https://ws.spotify.com/search/1/'+type+'?q='+query
