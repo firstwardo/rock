@@ -1,6 +1,6 @@
 app.controller('addServicesController', ['$scope','$http', function ($scope, $http) {
 
-    $http.get('/authedApps').
+    $http.get('/api/authedApps').
     success(function (data){
         $scope.authedApps = data;
         console.log(data);
@@ -9,7 +9,7 @@ app.controller('addServicesController', ['$scope','$http', function ($scope, $ht
 
     });
 
-    $http.get('/save-data').
+    $http.get('/api/save-data').
     success(function (data){
         alert("loaded");
         $scope.sessionTest = data;
@@ -59,7 +59,7 @@ app.controller('addServicesController', ['$scope','$http', function ($scope, $ht
         });
     }
     $scope.refresh = function (){
-        $http.get('/refreshgooglemusic').
+        $http.get('/api/refreshgooglemusic').
         success(function (data){
             alert(data);
         }).
