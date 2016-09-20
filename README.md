@@ -7,7 +7,7 @@ Songbox is a work-in-progress multi-music-streaming-service-aggregator. We take 
 
 Evan Ward, Jeremy Tennison, Marc Demory and Stephen Sullivan have had an absolute blast learning the technologies and genuinely trying to create something people might use and love. We want to create something people want to use, not another piece of internet noise.
 
-Version 0.0.5
+Version 0.0.5 (2014)
 ----
 
 
